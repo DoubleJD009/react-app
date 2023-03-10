@@ -83,7 +83,7 @@ function Price({ coinId }: PriceProps) {
     ["tickers", coinId],
     () => fetchCoinTickers(coinId),
     {
-      refetchInterval: 5000,
+      // refetchInterval: 5000,
     }
   );
 

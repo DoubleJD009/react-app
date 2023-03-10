@@ -8,11 +8,14 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
+const Loader = styled.span`
+  text-align: center;
+  display: block;
+`;
 const Overview = styled.main`
   width: 100%;
   height: 50px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -21,14 +24,12 @@ const Overview = styled.main`
   margin: 10px 0;
   padding: 20px;
   transform: translateY(-5px);
-  opacity: 0;
 `;
 
 const Tag = styled.h3`
   width: 50%;
-  color: black;
-  font-size: 12px;
-  font-weight: 600;
+  color: ${(props) => props.theme.textColor};
+  font-size: 12pt;
 `;
 
 const Value = styled.div`
@@ -38,7 +39,7 @@ const Value = styled.div`
 const Text = styled.h3<{ isPositive?: Boolean }>`
   font-size: 20px;
   font-weight: 600;
-  color: ${(props) => (props.isPositive ? "lightgreen" : "red")};
+  color: ${(props) => props.theme.accentColor};
 `;
 
 interface IPriceData {
@@ -90,7 +91,7 @@ function Price({ coinId }: PriceProps) {
   return (
     <Container>
       {isLoading ? (
-        "Loading Price..."
+        <Loader>Loading...</Loader>
       ) : (
         <>
           <Overview>

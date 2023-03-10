@@ -88,7 +88,7 @@ function App() {
         <ToggleBtn onClick={toggleDark}>Toggle Mode</ToggleBtn>
         <GlobalStyle />
         <Router />
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </ThemeProvider>
     </>
   );
